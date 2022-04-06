@@ -1,1 +1,2 @@
 Este é um arquivo novo!
+Esta linha eu acrescentei no branch novoRamo
