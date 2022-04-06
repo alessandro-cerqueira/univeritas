@@ -1,2 +1,3 @@
 Este é um arquivo novo!
-Esta linha eu acrescentei no branch novoRamo
+RETIRAR ESTALINHA --> linha eu acrescentei no branch novoRamo
+NOVA LINHA NO GITHUB
