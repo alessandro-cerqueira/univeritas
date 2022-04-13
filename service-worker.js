@@ -3,10 +3,6 @@
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
-var timeLogin = null;
-var idSolicitante = null;
-var lastCall = null;
-
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
@@ -23,12 +19,12 @@ const FILES_TO_CACHE = [
 ];
 
 self.addEventListener("install", evt =>  {
-  console.log("[SW] Instalação");
+  console.log("[App]Instalação");
   caches.keys().then(keyList => {
     return Promise.all(
       keyList.map(key => {
         if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-          console.log("[SW] Removendo cache antigo", key);
+          console.log("[App] Removendo cache antigo", key);
           return caches.delete(key);
         }
       })
@@ -37,7 +33,7 @@ self.addEventListener("install", evt =>  {
 
   evt.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log("[SW] Pré-caching dos arquivos" + cache);
+      console.log("[App] Pré-caching dos arquivos" + cache);
       return cache.addAll(FILES_TO_CACHE);
     })
   );
@@ -45,13 +41,13 @@ self.addEventListener("install", evt =>  {
 });
 
 self.addEventListener("activate", evt => {
-  console.log("[SW] Activate");
+  console.log("[App] Activate");
   evt.waitUntil(
     caches.keys().then(keyList => {
       return Promise.all(
         keyList.map(key => {
           if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-            console.log("[SW] Removendo cache antigo", key);
+            console.log("[App] Removendo cache antigo", key);
             return caches.delete(key);
           }
         })

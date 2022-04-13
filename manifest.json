@@ -1,8 +1,17 @@
 {
   "name": "Cadastro de Alunos",
   "short_name": "CadAlunos",
+  "categories": ["education","social"],
   "start_url": "/",
   "scope": ".",
+  "shortcuts" : [
+    {
+      "name": "Cadastro de Alunos",
+      "url": "/",
+      "description": "Cadastro de Alunos"
+    }
+  ],
+  
   "icons": [
 	    {
 	      "src": "/images/icons/512-512.png",
@@ -49,6 +58,7 @@
 	  ],
   "orientation": "portrait-primary",
   
+  
   "screenshots" : [
     {
       "src": "/images/icons/512-512.png",
@@ -58,7 +68,6 @@
       "label": "Screenshot"
     }
   ],
-  
   
   "display_override": ["window-control-overlay", "minimal-ui"],
   "display": "fullscreen",
