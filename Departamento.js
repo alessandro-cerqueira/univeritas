@@ -1,6 +1,6 @@
 import ModelError from "/ModelError.js";
 
-export default class Aluno {
+export default class Departamento {
     
   //
   // DECLARAÇÃO DE ATRIBUTOS PRIVADOS: Em JavaScript, se o nome do atributo tem # no início, isso 
@@ -41,7 +41,7 @@ export default class Aluno {
   //-----------------------------------------------------------------------------------------//
 
   setnumEmpregados(num_empregados) {
-    if(!Aluno.validarnumEmpregados(num_empregados))
+    if(!Departamento.validarnumEmpregados(num_empregados))
       throw new ModelError("num_empregados Inválido: " + num_empregados);
     this.#num_empregados = num_empregados;
   }
@@ -55,7 +55,7 @@ export default class Aluno {
   //-----------------------------------------------------------------------------------------//
 
   setNome(nome) {
-    if(!Aluno.validarNome(nome))
+    if(!Departamento.validarNome(nome))
       throw new ModelError("Nome Inválido: " + nome);
     this.#nome = nome;
   }
@@ -73,7 +73,7 @@ export default class Aluno {
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Aluno(obj.sigla, obj.num_empregados, obj.nome);
+    return new Departamento(obj.sigla, obj.num_empregados, obj.nome);
   }
 
   //-----------------------------------------------------------------------------------------//
