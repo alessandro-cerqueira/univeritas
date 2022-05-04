@@ -89,6 +89,11 @@ button[disabled]{
   color: #666666;
 }
 
+button .anterior {
+  background: url(https://cdn3.iconfinder.com/data/icons/musthave/24/Delete.png) no-repeat;
+  background-position:center top;
+}
+
 div {
   margin: 12px 0 12px 0;  
 }

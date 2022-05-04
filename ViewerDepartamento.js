@@ -67,7 +67,7 @@ export default class ViewerDepartamento {
   
   apresentar(pos, qtde, departamento) {    
     
-    this.configurarNavegacao( pos <= 1 , pos == qtde );   
+    this.configurarNavegacao( pos , qtde );   
 
     if(departamento == null) {
       this.tfSigla.value         = "";
@@ -84,11 +84,61 @@ export default class ViewerDepartamento {
 
 //------------------------------------------------------------------------//
 
-  configurarNavegacao(flagInicio, flagFim) {
+  configurarNavegacao(pos, qtde) {
+    
+    let flagInicio = pos <= 1;
+    let flagFim = pos == qtde;
+    
     this.btPrimeiro.disabled = flagInicio;
     this.btUltimo.disabled   = flagFim;
     this.btProximo.disabled  = flagFim;
     this.btAnterior.disabled = flagInicio;
+    
+    this.btIncluir.title = "Inicia a inclusão de um novo departamento";
+    this.btSair.title = "Encerra a aplicação";
+
+    //
+    // Atribuo um hint aos botões Primeiro e Anterior, caso estejam habilitados
+    //
+    if(!flagInicio) {
+      this.btPrimeiro.title = "Apresenta o primeiro departamento da lista";
+      this.btAnterior.title = "Apresenta o departamento anterior da lista";
+    }
+    else {
+      this.btPrimeiro.title = "";
+      this.btAnterior.title = "";
+    }
+
+    //
+    // Atribuo um hint aos botões Último e Próximo, caso estejam habilitados
+    //
+    if(!flagFim) {
+      this.btUltimo.title = "Apresenta o último departamento da lista";
+      this.btProximo.title = "Apresenta o próximo departamento da lista";
+    }
+    else {
+      this.btUltimo.title = "";
+      this.btProximo.title = "";
+    }
+
+  
+    //
+    // Atribuo um hint aos botões Alterar e Excluir, caso estejam habilitados
+    //
+    if(pos != 0) {
+      this.btAlterar.disabled = false;
+      this.btExcluir.disabled = false;
+      this.btAlterar.title = "Habilita a alteração do departamento em questão";
+      this.btExcluir.title = "Inicia os procedimentos para exclusão do departamento em questão";
+    }
+    else {
+      this.btAlterar.disabled = true;
+      this.btExcluir.disabled = true;
+      this.btAlterar.title = "";
+      this.btExcluir.title = "";
+    }
+
+  
   }
   
 //------------------------------------------------------------------------//
