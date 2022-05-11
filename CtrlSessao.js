@@ -1,13 +1,14 @@
 "use strict";
 
 import CtrlManterDepartamentos from "/CtrlManterDepartamentos.js";
+import CtrlManterAlunos from "/CtrlManterAlunos.js";
 
 export default class CtrlSessao {
   
   //-----------------------------------------------------------------------------------------//
   
   constructor() {
-    this.ctrlAtual = new CtrlManterDepartamentos();
+    this.ctrlAtual = new CtrlManterAlunos();
   }
   
   //-----------------------------------------------------------------------------------------//
