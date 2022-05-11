@@ -32,13 +32,30 @@ body {
 }
 
 header {  
+  margin: 12px 0 12px 0;  
+  border-bottom: 4px solid #fff;
+  line-height: 105%;
+}
+
+header h1 {  
   color: #000000;      
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  line-height: 105%;
-  margin: 12px 0 12px 0;  
-  border-bottom: 4px solid #fff;
+  text-align: center;
+}
+
+a.oculto {
+    display: inline-block;
+    font-size: 0;
+    text-indent: -20000px;
+}
+
+footer blockquote {
+  color: #000000;      
+  font-style: italic;
+  font-weight: normal;
+  font-size: 8px;
   text-align: center;
 }
 
@@ -71,28 +88,77 @@ button  {
   padding: 12px 12px;
   font-size: 14px;
   line-height: 1px;
-  height: 20px;
+  height: 40px;
+  width: 80px;
   align-items: center;
   cursor: pointer;
   background: #FFFFFF;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
   text-decoration: none;
-  color: #000;
+  color: #000;  
+  vertical-align: top; padding-top: 30px;
 }
 
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
+  border: 2px solid #999999;
+  background-color: #aaaaaa;
   color: #666666;
 }
 
-button .anterior {
-  background: url(https://cdn3.iconfinder.com/data/icons/musthave/24/Delete.png) no-repeat;
-  background-position:center top;
+button#btAnterior {
+  background: url(images/icons/anterior.jpg) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
 }
+
+button#btProximo {
+  background: url(images/icons/proximo.jpg) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btPrimeiro {
+  background: url(images/icons/primeiro.jpg) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btUltimo {
+  background: url(images/icons/último.jpg) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btIncluir {
+  background: url(images/icons/IconeAdicionar.png) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btAlterar {
+  background: url(images/icons/IconeAlterar.png) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btExcluir {
+  background: url(images/icons/IconeExcluir.png) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+button#btSair {
+  background: url(images/icons/IconeSair.jpg) no-repeat;
+  background-position: center 4px, center center;
+  background-size: 20px 20px;
+}
+
+
+
+
 
 div {
   margin: 12px 0 12px 0;  

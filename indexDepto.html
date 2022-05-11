@@ -9,15 +9,26 @@
   </head>
   <body>
     <header>
-      Cadastro de Alunos
+        <ul id="accessibility">
+					<li><a accesskey="1" href="#main" id="link-conteudo">Ir
+							para o conteúdo <span>1</span>
+					</a></li>
+					<li><a accesskey="2" href="#menu" id="link-menu">Ir para o
+							menu <span>2</span>
+					</a></li>
+					<li><a accesskey="4" href="#footer" id="link-rodape">Ir
+							para o rodapé <span>4</span>
+					</a></li>
+				</ul>
+       <h1>Cadastro de Departamentos</h1>
     </header>
     <main>
-      <div><label>Matrícula:</label><input type="text" id="tfMatricula" disabled="true" /></div>
-      <div><label>CPF:</label><input type="text" id="tfCpf" disabled="true"/></div> 
+      <a id="inicioConteudo" class="oculto">Início do conteúdo</a>
+      <div><label>Sigla:</label><input type="text" id="tfSigla" disabled="true" /></div>
       <div><label>Nome:</label><input type="text" id="tfNome" disabled="true"/></div> 
-      <div><label>e-Mail:</label><input type="text" id="tfEmail" disabled="true"/></div> 
-      <div><label>Telefone:</label><input type="text" id="tfTelefone" disabled="true"/></div> 
+      <div><label>NumEmpregados:</label><input type="text" id="tfNumEmpregados" disabled="true"/></div> 
         <nav>
+          <a id="menu" class="oculto">Menu</a>
           <div id="divNavegar">
             <button id="btPrimeiro">
               Primeiro
@@ -59,11 +70,9 @@
         </nav>
     </main>
     <footer>
-      Desenvolvimento Mobile (2022/1)  
+      <a id="footer" class="oculto">Rodapé</a>
+      Projeto da disciplina de Usabilidade e IHC (Univeritas/RJ)
     </footer>
   </body>
     <script type="module" src="/CtrlSessao.js"></script>
-  <script> 
-  
-  </script>
 </html>
