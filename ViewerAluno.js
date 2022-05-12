@@ -33,6 +33,7 @@ export default class ViewerAluno {
     this.tfNome      = this.obterElemento('tfNome');
     this.tfEmail     = this.obterElemento('tfEmail');
     this.tfTelefone  = this.obterElemento('tfTelefone');
+    this.cbCurso     = this.obterElemento('cbCurso');
       
     this.btPrimeiro.onclick = fnBtPrimeiro; 
     this.btProximo.onclick = fnBtProximo; 
@@ -45,6 +46,8 @@ export default class ViewerAluno {
 
     this.btOk.onclick = fnBtOk; 
     this.btCancelar.onclick = fnBtCancelar; 
+    
+    this.listaCursos = ctrl.getListaCursos();
   }
 
 //------------------------------------------------------------------------//
@@ -71,6 +74,17 @@ export default class ViewerAluno {
     
     this.configurarNavegacao( pos <= 1 , pos == qtde );   
 
+    // Limpando a combobox de cursos
+     while (this.cbCurso.options.length > 0) 
+        this.cbCurso.remove(0);
+    
+    // Adicionando as options na combobox de curso
+    for(let i = 0; i < this.listaCursos.length; i++) {
+      let curso = this.listaCursos[i];
+      let novaOpcao = new Option(curso.nome,curso.codigo);
+      this.cbCurso.add(novaOpcao);
+    }    
+    
     if(aluno == null) {
       this.tfMatricula.value = "";
       this.tfCpf.value       = "";

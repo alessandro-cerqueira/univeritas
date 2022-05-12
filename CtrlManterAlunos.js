@@ -14,6 +14,7 @@ export default class CtrlManterAlunos {
   //
   #dao;      // Referência para o Data Access Object para o Store de Alunos
   #viewer;   // Referência para o gerenciador do viewer 
+  #listaCursos; // Array que terá todos os cursos presentes na base de dados
   #posAtual; // Indica a posição do objeto Aluno que estiver sendo apresentado
   #status;   // Indica o que o controlador está fazendo 
   
@@ -21,6 +22,7 @@ export default class CtrlManterAlunos {
 
   constructor() {
     this.#dao = new DaoAluno();
+    this.#listaCursos = [{cod:1,nome:"Tecnologia da Informação"},{cod:2,nome:"Contabilidade"},{cod:3,nome:"Enfermagem"}];
     this.#viewer = new ViewerAluno(this);
     this.#posAtual = 1;
     this.#atualizarContextoNavegacao();    
@@ -57,6 +59,11 @@ export default class CtrlManterAlunos {
   
   //-----------------------------------------------------------------------------------------//
 
+  getListaCursos() {
+    return this.#listaCursos;
+  }
+  
+  //-----------------------------------------------------------------------------------------//
   async apresentarPrimeiro() {
     let conjAlunos = await this.#dao.obterAlunos();
     if(conjAlunos.length > 0)
